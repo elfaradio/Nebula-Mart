@@ -13,7 +13,7 @@
 
 <body class="bg-emerald-50 overflow-x-hidden">
   <section>
-    <nav class="bg-gray-800">
+    <nav class="bg-gray-800 fixed z-50 w-full top-0">
       <div class="max-w-screen-xl px-4 mx-auto py-4 flex items-center justify-between">
         <!-- left Side -->
         <div class="flex items-center space-x-8">
@@ -63,7 +63,7 @@
     <div id="cartToggle" class="fixed top-26 right-7 bg-emerald-50 w-60 h-133 p-4 rounded shadow-lg z-50 ">
       <div class="flex justify-between items-center mb-2">
         <h3 class="font-bold text-lg">Shopping Cart</h3>
-        <button id="closeCart" class="text-black font-bold text-xl">&times;</button>
+
       </div>
 
       <div id="cartItems" class="space-y-2 max-h-60 overflow-y-auto bg-white p-2 rounded">
@@ -79,8 +79,12 @@
 
         <div>Total: <span id="total">0</span> $</div>
         <button id="final" class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-black">
-          Ok
+          Confirm Order
         </button>
+        <button id="closeCart" class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-black">
+          Cancel
+        </button>
+
       </div>
     </div>
 
@@ -95,11 +99,11 @@
 
 
 
-
+  <div class="h-20" id="home"></div>
 
   <!-- slider -->
-  <section id="home" class="mt-10 bg-white  ">
-    <div class="w-full h-100">
+  <section id="" class=" bg-white   ">
+    <div class="w-full h-100 ">
       <div class="flex w-[200%] animate-slide gap-2   ">
         <img src=" https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" alt=""
           class="w-1/4 object-contain h-100  bg-pink-50 border-black border-5" />
@@ -147,7 +151,7 @@
     </style>
   </section>
   <!-- All products -->
-  <section id="product" class="mt-10">
+  <section id="product" class="mt-10 pt-10">
     <div id="products" class="grid grid-cols-3 gap-4 px-30"></div>
   </section>
 </body>

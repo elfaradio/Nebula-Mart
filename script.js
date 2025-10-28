@@ -1,7 +1,7 @@
 let cart = {};
 let disCount = 0;
 let balance = parseInt(localStorage.getItem("balance")) || 1000;
-
+let c = 0;
 const cartBtn = document.getElementById("cartBtn");
 const cartToggle = document.getElementById("cartToggle");
 const closeCart = document.getElementById("closeCart");
@@ -31,7 +31,8 @@ const showAll = (products) => {
   const div = document.getElementById("products");
   products.forEach((product) => {
     const cd = document.createElement("div");
-    cd.className = "bg-white rounded-lg shadow-md px-4 py-4 flex flex-col";
+    cd.className =
+      "bg-white rounded-lg shadow-md duration-300 hover:scale-105 hover:shadow-[0_0_15px_0_rgba(0,0,255,0.5)] flex flex-col px-4 py-4";
 
     cd.innerHTML = `
       <img src="${product.images[0]}" alt="${
