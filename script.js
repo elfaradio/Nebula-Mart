@@ -13,6 +13,7 @@ const cartItems = document.getElementById("cartItems");
 
 balanceTag.textContent = balance;
 let nasif = 0;
+let ifte=0;
 const fetching = () => {
   const storage = localStorage.getItem("lcproducts");
   if (storage) {
