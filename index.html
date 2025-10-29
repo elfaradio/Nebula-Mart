@@ -1,160 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nebula Mart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nebula Mart</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
 
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
+  <body class="bg-emerald-50 overflow-x-hidden">
+    <section>
+      <nav class="bg-gray-800 fixed z-50 w-full top-0">
+        <div
+          class="max-w-screen-xl px-4 mx-auto py-4 flex items-center justify-between"
+        >
+          <!-- left Side -->
+          <div class="flex items-center space-x-8">
+            <div class="flex items-center space-x-2">
+              <img
+                src="assets/mainlogo.png"
+                alt=""
+                class="w-10 h-10 rounded-lg hover:scale-110 duration-400"
+              />
+              <a href="#" class="text-lg font-bold text-white"> NebulaMart </a>
+            </div>
+            <a
+              href="#home"
+              class="text-sm font-medium text-white hover:text-green-600"
+            >
+              Home
+            </a>
 
-<body class="bg-emerald-50 overflow-x-hidden">
-  <section>
-    <nav class="bg-gray-800 fixed z-50 w-full top-0">
-      <div class="max-w-screen-xl px-4 mx-auto py-4 flex items-center justify-between">
-        <!-- left Side -->
-        <div class="flex items-center space-x-8">
-          <div class="flex items-center space-x-2">
-            <img src="assets/mainlogo.png" alt="" class="w-10 h-10 rounded-lg hover:scale-110 duration-400" />
-            <a href="#" class="text-lg font-bold text-white"> NebulaMart </a>
+            <a
+              href="#product"
+              class="text-sm font-medium text-white hover:text-green-600"
+            >
+              Products
+            </a>
+            <a
+              href="#reviews"
+              class="text-sm font-medium text-white hover:text-green-600"
+            >
+              Reviews
+            </a>
           </div>
-          <a href="#home" class="text-sm font-medium text-white hover:text-blue-600">
-            Home
-          </a>
 
-          <a href="#product" class="text-sm font-medium text-white hover:text-blue-600">
-            Products
-          </a>
-          <a href="#reviews" class="text-sm font-medium text-white hover:text-blue-600">
-            Reviews
-          </a>
+          <!-- Right Side -->
+          <div class="flex items-center space-x-4">
+            <button
+              type="button"
+              id="cartBtn"
+              class="inline-flex items-center rounded-lg p-2 hover:bg-green-700 text-sm font-medium text-white"
+            >
+              <svg
+                class="w-5 h-5"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M5 4h1.5L9 16h8a2 2 0 100 4 2 2 0 000-4H9a2 2 0 100 4 2 2 0 000-4H5z"
+                />
+              </svg>
+              Cart
+            </button>
+
+            <!-- Balance -->
+            <button
+              id="addBtn"
+              class="inline-flex items-center rounded-lg gap-1 p-2 hover:bg-green-700 text-sm font-medium text-white"
+            >
+              <img
+                width="20"
+                height="20"
+                src="https://img.icons8.com/fluency-systems-regular/48/add-money.png"
+                alt="add-money"
+                class="invert"
+              />
+              Add Balance
+            </button>
+            <p class="text-white">Balance : <span id="tk">1000</span> $</p>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Cart -->
+      <div
+        id="cartToggle"
+        class="fixed top-26 right-1 bg-white w-70 h-133 p-4 rounded-lg shadow-lg z-50"
+      >
+        <div class="flex justify-between items-center mb-2">
+          <h3 class="font-bold text-lg">Shopping Cart</h3>
         </div>
 
-        <!-- Right Side -->
-        <div class="flex items-center space-x-4">
-          <button type="button" id="cartBtn"
-            class="inline-flex items-center rounded-lg p-2 hover:bg-blue-700 text-sm font-medium text-white">
-            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M5 4h1.5L9 16h8a2 2 0 100 4 2 2 0 000-4H9a2 2 0 100 4 2 2 0 000-4H5z" />
-            </svg>
-            Cart
-          </button>
+        <div
+          id="cartItems"
+          class="space-y-2 max-h-60 overflow-y-auto bg-white p-2 rounded"
+        ></div>
 
-          <!-- Balance -->
-          <button id="addBtn"
-            class="inline-flex items-center rounded-lg gap-1 p-2 hover:bg-blue-700 text-sm font-medium text-white">
-            <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/add-money.png"
-              alt="add-money" class="invert" />
-            Add Balance
+        <div class="mt-4 p-1 space-y-1">
+          <div>Price: <span id="price">0</span> $</div>
+          <div>Delivery: <span id="delivery">0</span> $</div>
+          <div class="appbtn flex flex-row">
+            <input
+              type="text"
+              placeholder="1010101111001101=?"
+              class="bg-gray-200"
+              id="cpn"
+            />
+            <button
+              id="applycpn"
+              class="rounded-md bg-black text-white p-1 mt-1 ml-1 hover:bg-green-500"
+            >
+              Apply Coupon
+            </button>
+          </div>
+          <p id="msg" class="text-sm text-green-400 mt-1"></p>
+
+          <div>Total: <span id="total">0</span> $</div>
+          <button
+            id="final"
+            class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-black"
+          >
+            Confirm Order
           </button>
-          <p class="text-white">Balance : <span id="tk">1000</span> $</p>
+          <button
+            id="closeCart"
+            class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-black"
+          >
+            Cancel
+          </button>
         </div>
       </div>
-    </nav>
+    </section>
 
+    <div class="h-20" id="home"></div>
 
-
-    <!-- Cart -->
-    <div id="cartToggle" class="fixed top-26 right-7 bg-emerald-50 w-60 h-133 p-4 rounded shadow-lg z-50 ">
-      <div class="flex justify-between items-center mb-2">
-        <h3 class="font-bold text-lg">Shopping Cart</h3>
-
+    <!-- slider -->
+    <section id="" class="bg-white">
+      <div class="w-full h-100">
+        <div class="flex w-[200%] animate-slide gap-2">
+          <img
+            src=" https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"
+            alt=""
+            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
+          />
+          <img
+            src="https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp"
+            alt=""
+            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
+          />
+          <img
+            src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp"
+            alt=""
+            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
+          />
+          <img
+            src="https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp"
+            alt=""
+            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
+          />
+          <img
+            src="https://cdn.dummyjson.com/product-images/groceries/cat-food/1.webp"
+            alt=""
+            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
+          />
+        </div>
       </div>
 
-      <div id="cartItems" class="space-y-2 max-h-60 overflow-y-auto bg-white p-2 rounded">
+      <style>
+        @keyframes slide {
+          0% {
+            transform: translateX(0%);
+          }
 
-      </div>
+          20% {
+            transform: translateX(-20%);
+          }
 
-      <div class="mt-4 p-1  space-y-1">
-        <div>Price: <span id="price">0</span> $</div>
-        <div>Delivery: <span id="delivery">0</span> $</div>
-        <input type="text" placeholder="1010101111001101=?" class="bg-white " id="cpn">
-        <button id="applycpn" class="rounded-full bg-black text-white p-1 mt-1 hover:bg-green-500">Apply Coupon</button>
-        <p id="msg" class="text-sm text-green-400 mt-1"></p>
+          40% {
+            transform: translateX(-40%);
+          }
 
-        <div>Total: <span id="total">0</span> $</div>
-        <button id="final" class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-black">
-          Confirm Order
-        </button>
-        <button id="closeCart" class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-black">
-          Cancel
-        </button>
+          60% {
+            transform: translateX(-60%);
+          }
 
-      </div>
-    </div>
+          80% {
+            transform: translateX(-80%);
+          }
 
-
-
-
-
-
-
-
-  </section>
-
-
-
-  <div class="h-20" id="home"></div>
-
-  <!-- slider -->
-  <section id="" class=" bg-white   ">
-    <div class="w-full h-100 ">
-      <div class="flex w-[200%] animate-slide gap-2   ">
-        <img src=" https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" alt=""
-          class="w-1/4 object-contain h-100  bg-pink-50 border-black border-5" />
-        <img src="https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp" alt=""
-          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
-        <img src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp" alt=""
-          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
-        <img src="https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp" alt=""
-          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
-        <img src="https://cdn.dummyjson.com/product-images/groceries/cat-food/1.webp" alt=""
-          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
-      </div>
-    </div>
-
-    <style>
-      @keyframes slide {
-        0% {
-          transform: translateX(0%);
+          100% {
+            transform: translateX(0%);
+          }
         }
 
-        20% {
-          transform: translateX(-20%);
+        .animate-slide {
+          animation: slide 25s linear infinite;
         }
-
-        40% {
-          transform: translateX(-40%);
-        }
-
-        60% {
-          transform: translateX(-60%);
-        }
-
-        80% {
-          transform: translateX(-80%);
-        }
-
-        100% {
-          transform: translateX(0%);
-        }
-      }
-
-      .animate-slide {
-        animation: slide 25s linear infinite;
-      }
-    </style>
-  </section>
-  <!-- All products -->
-  <section id="product" class="mt-10 pt-10">
-    <div id="products" class="grid grid-cols-3 gap-4 px-30"></div>
-  </section>
-</body>
-<script src="script.js"></script>
-
+      </style>
+    </section>
+    <!-- All products -->
+    <section id="product" class="mt-10 pt-10">
+      <div id="products" class="grid grid-cols-3 gap-4 px-30"></div>
+    </section>
+  </body>
+  <script src="script.js"></script>
 </html>
