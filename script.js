@@ -12,7 +12,8 @@ const deliveryTag = document.getElementById("delivery");
 const cartItems = document.getElementById("cartItems");
 
 balanceTag.textContent = balance;
-
+let nasif = 0;
+let ifte=0;
 const fetching = () => {
   const storage = localStorage.getItem("lcproducts");
   if (storage) {
@@ -35,15 +36,13 @@ const showAll = (products) => {
       "bg-white rounded-lg shadow-md duration-300 hover:scale-105 hover:shadow-[0_0_15px_0_rgba(0,0,255,0.5)] flex flex-col px-4 py-4";
 
     cd.innerHTML = `
-      <img src="${product.images[0]}" alt="${
-      product.title
-    }" class="w-full h-40 object-contain mb-2"/>
+      <img src="${product.images[0]}" alt="${product.title
+      }" class="w-full h-40 object-contain mb-2"/>
       <p class="text-gray-700 font-bold mb-2">$${product.price}</p>
       <h2 class="font-semibold text-lg mb-1">${product.title}</h2>
       <p class="text-gray-500 text-sm mb-2">${product.description}</p>
       <p class="text-sm font-bold mb-2">In Stock: ${product.stock}</p>
-      <button class="addToCart bg-green-500 text-white px-2 py-2 mb-5 rounded hover:bg-black w-32"> ${
-        product.stock <= 0 ? "Out of Stock" : "Add to Cart"
+      <button class="addToCart bg-green-500 text-white px-2 py-2 mb-5 rounded hover:bg-black w-32"> ${product.stock <= 0 ? "Out of Stock" : "Add to Cart"
       }</button>
     `;
 
