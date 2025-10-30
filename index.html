@@ -1,218 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nebula Mart</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
 
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nebula Mart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-  <body class="bg-emerald-50 overflow-x-hidden">
-    <section>
-      <nav class="bg-gray-800 fixed z-50 w-full top-0">
-        <div
-          class="max-w-7xl px-4 mx-auto py-4 flex items-center justify-between"
-        >
-          <!-- left Side -->
-          <div class="flex items-center space-x-8">
-            <div class="flex items-center space-x-2">
-              <img
-                src="assets/mainlogo.png"
-                alt=""
-                class="w-10 h-10 rounded-lg hover:scale-110 duration-400"
-              />
-              <a href="#" class="text-lg font-bold text-white"> NebulaMart </a>
-            </div>
-            <a
-              href="#home"
-              class="text-sm font-medium text-white hover:text-green-600"
-            >
-              Home
-            </a>
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
 
-            <a
-              href="#product"
-              class="text-sm font-medium text-white hover:text-blue-600"
-            >
-              Products
-            </a>
-            <a
-              href="#reviews"
-              class="text-sm font-medium text-white hover:text-blue-600"
-            >
-              Reviews
-            </a>
+<body class="bg-emerald-50 overflow-x-hidden">
+  <section>
+    <nav class="bg-gray-800 fixed z-50 w-full top-0">
+      <div class="max-w-7xl px-4 mx-auto py-4 flex items-center justify-between">
+        <!-- left Side -->
+        <div class="flex items-center space-x-8">
+          <div class="flex items-center space-x-2">
+            <img src="assets/mainlogo.png" alt="" class="w-10 h-10 rounded-lg hover:scale-110 duration-400" />
+            <a href="#" class="text-lg font-bold text-white"> NebulaMart </a>
           </div>
+          <a href="#home" class="text-sm font-medium text-white hover:text-green-600">
+            Home
+          </a>
 
-          <!-- Right Side -->
-          <div class="flex items-center space-x-4">
-            <button
-              type="button"
-              id="cartBtn"
-              class="inline-flex items-center rounded-lg p-2 hover:bg-green-700 text-sm font-medium text-white"
-            >
-              <svg
-                class="w-5 h-5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M5 4h1.5L9 16h8a2 2 0 100 4 2 2 0 000-4H9a2 2 0 100 4 2 2 0 000-4H5z"
-                />
-              </svg>
-              Cart
-            </button>
-
-            <!-- Balance -->
-            <button
-              id="addBtn"
-              class="inline-flex items-center rounded-lg gap-1 p-2 hover:bg-green-700 text-sm font-medium text-white"
-            >
-              <img
-                width="20"
-                height="20"
-                src="https://img.icons8.com/fluency-systems-regular/48/add-money.png"
-                alt="add-money"
-                class="invert"
-              />
-              Add Balance
-            </button>
-            <p class="text-white">Balance : <span id="tk">1000</span> $</p>
-          </div>
+          <a href="#product" class="text-sm font-medium text-white hover:text-blue-600">
+            Products
+          </a>
+          <a href="#reviews" class="text-sm font-medium text-white hover:text-blue-600">
+            Reviews
+          </a>
         </div>
-      </nav>
 
-      <!-- Cart -->
-      <div
-        id="cartToggle"
-        class="fixed top-26 right-1 bg-white w-70 h-133 p-4 rounded-lg shadow-lg z-50"
+        <!-- Right Side -->
+        <div class="flex items-center space-x-4">
+          <button type="button" id="cartBtn"
+            class="inline-flex items-center rounded-lg p-2 hover:bg-green-700 text-sm font-medium text-white">
+            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M5 4h1.5L9 16h8a2 2 0 100 4 2 2 0 000-4H9a2 2 0 100 4 2 2 0 000-4H5z" />
+            </svg>
+            Cart
+          </button>
+
+          <!-- Balance -->
+          <button id="addBtn"
+            class="inline-flex items-center rounded-lg gap-1 p-2 hover:bg-green-700 text-sm font-medium text-white">
+            <img width="20" height="20" src="https://img.icons8.com/fluency-systems-regular/48/add-money.png"
+              alt="add-money" class="invert" />
+            Add Balance
+          </button>
+          <p class="text-white">Balance : <span id="tk">1000</span> $</p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Cart -->
+    <div id="cartToggle" class="fixed top-26 right-1 bg-blue-400 w-90 h-140 p-4 rounded-lg shadow-lg z-50">
+      <div class="flex justify-between items-center mb-2">
+        <h3 class="font-bold text-lg">Shopping Cart</h3>
+      </div>
+
+      <div id="cartItems" class="space-y-2 max-h-50 overflow-y-auto bg-white p-2 rounded"></div>
+
+      <div class="mt-4 p-1 space-y-1 font-medium">
+        <div>Price: <span id="price">0</span> $</div>
+        <div>Delivery: <span id="delivery">0</span> $</div>
+        <div class="appbtn flex flex-row">
+          <input type="text" placeholder="1010101111001101=?" class="bg-gray-200 rounded-md mt-1 ml-1" id="cpn" />
+          <button id="applycpn" class="rounded-md bg-green-500 text-white p-1.5 mt-1 ml-1 hover:bg-amber-500">
+            Apply Coupon
+          </button>
+        </div>
+        <p id="msg" class="text-lg text-red-500 mt-1 font-medium"></p>
+
+        <div>Total: <span id="total">0</span> $</div>
+        <button id="final" class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-amber-500">
+          Confirm Order
+        </button>
+        <button id="closeCart" class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-amber-500">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="h-20" id="home"></div>
+
+  <!-- slider -->
+  <section id="" class="bg-white">
+    <div class="w-full h-100">
+      <div class="flex w-[200%] animate-slide gap-2">
+        <img src=" https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp" alt=""
+          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
+        <img src="https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp" alt=""
+          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
+        <img src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp" alt=""
+          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
+        <img src="https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp" alt=""
+          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
+        <img src="https://cdn.dummyjson.com/product-images/groceries/cat-food/1.webp" alt=""
+          class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5" />
+      </div>
+    </div>
+
+    <style>
+      @keyframes slide {
+        0% {
+          transform: translateX(0%);
+        }
+
+        20% {
+          transform: translateX(-20%);
+        }
+
+        40% {
+          transform: translateX(-40%);
+        }
+
+        60% {
+          transform: translateX(-60%);
+        }
+
+        80% {
+          transform: translateX(-80%);
+        }
+
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      .animate-slide {
+        animation: slide 25s linear infinite;
+      }
+    </style>
+  </section>
+  <!-- All products -->
+  <section id="product" class="mt-10 pt-10">
+    <div id="products" class="grid grid-cols-3 gap-4 px-30"></div>
+  </section>
+  <!-- Reviews Section -->
+  <section id="reviews" class="bg-emerald-50 py-16">
+    <div class="container mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-12 text-blue-700 bg-pink-400 max-w-max mx-auto rounded-lg p-3.5">
+        Customer Reviews</h3>
+
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <div class="bg-green-300 shadow-md p-6 rounded-lg h-50">
+          <p class="italic text-lg">"Amazing quality products and fast delivery! Excellent product selection and
+            competitive prices!"</p>
+          <div class="flex mt-2">
+            <span class="text-yellow-400 text-xl">★★★★★</span>
+          </div>
+          <h4 class="mt-2 font-bold text-blue-600 text-2xl">- Adnan Jahangir.</h4>
+        </div>
+        <div class="bg-green-300 shadow-md p-6 rounded-lg h-50">
+          <p class="italic text-lg">"Great customer service and wonderful designs.This skincare product has done wonders
+            for my skin!"</p>
+          <div class="flex mt-2">
+            <span class="text-yellow-400 text-xl">★★★★☆</span>
+          </div>
+          <h4 class="mt-2 font-bold text-blue-600 text-2xl">- Mahadi.</h4>
+        </div>
+        <div class="bg-green-300 shadow-md p-6 rounded-lg h-50">
+          <p class="italic text-lg">"I love shopping here! Highly recommend.The online makeup tutorial provided by your
+            team was very helpful"</p>
+          <div class="flex mt-2">
+            <span class="text-yellow-400 text-xl">★★★★★</span>
+          </div>
+          <h4 class="mt-2 font-bold text-blue-600 text-2xl">- Shahariar.</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section -->
+<section id="contact" class="bg-emerald-200 py-6">
+  <div class="container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-8 text-slate-800">Contact Us</h3>
+    
+    <form 
+      action="https://sheetdb.io/api/v1/g2wcpmkbl4tfq" 
+      method="POST"
+      class="max-w-2xl mx-auto bg-white shadow-md p-8 rounded-lg space-y-4"
+    >
+      <input 
+        type="text" 
+        name="name" 
+        placeholder="Your Name" 
+        class="w-full border border-gray-300 p-2 rounded-lg" 
+        required
       >
-        <div class="flex justify-between items-center mb-2">
-          <h3 class="font-bold text-lg">Shopping Cart</h3>
-        </div>
 
-        <div
-          id="cartItems"
-          class="space-y-2 max-h-60 overflow-y-auto bg-white p-2 rounded"
-        ></div>
+      <input 
+        type="tel" 
+        name="phone" 
+        placeholder="Your Phone" 
+        class="w-full border border-gray-300 p-2 rounded-lg" 
+        required
+      >
 
-        <div class="mt-4 p-1 space-y-1">
-          <div>Price: <span id="price">0</span> $</div>
-          <div>Delivery: <span id="delivery">0</span> $</div>
-          <div class="appbtn flex flex-row">
-            <input
-              type="text"
-              placeholder="1010101111001101=?"
-              class="bg-gray-200"
-              id="cpn"
-            />
-            <button
-              id="applycpn"
-              class="rounded-md bg-black text-white p-1 mt-1 ml-1 hover:bg-green-500"
-            >
-              Apply Coupon
-            </button>
-          </div>
-          <p id="msg" class="text-sm text-green-400 mt-1"></p>
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Your Email" 
+        class="w-full border border-gray-300 p-2 rounded-lg" 
+        required
+      >
 
-          <div>Total: <span id="total">0</span> $</div>
-          <button
-            id="final"
-            class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-black"
-          >
-            Confirm Order
-          </button>
-          <button
-            id="closeCart"
-            class="bg-green-600 text-white px-4 py-2 mt-2 rounded-lg w-full hover:bg-black"
-          >
-            Cancel
-          </button>
-        </div>
-      </div>
-    </section>
+      <textarea 
+        name="message" 
+        placeholder="Your Message" 
+        rows="3"
+        class="w-full border border-gray-300 p-2 rounded-lg" 
+        required
+      ></textarea>
 
-    <div class="h-20" id="home"></div>
+      <button 
+        type="submit"
+        class="bg-amber-400 text-black px-4 py-2 rounded-lg hover:bg-amber-500 w-full font-bold"
+      >
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
 
-    <!-- slider -->
-    <section id="" class="bg-white">
-      <div class="w-full h-100">
-        <div class="flex w-[200%] animate-slide gap-2">
-          <img
-            src=" https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
-          />
-          <img
-            src="https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
-          />
-          <img
-            src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
-          />
-          <img
-            src="https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
-          />
-          <img
-            src="https://cdn.dummyjson.com/product-images/groceries/cat-food/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-100 bg-pink-50 border-black border-5"
-          />
-        </div>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+
+      <!-- Logo / Brand -->
+      <div>
+        <h2 class="text-xl font-bold text-pink-400">NebulaMart</h2>
       </div>
 
-      <style>
-        @keyframes slide {
-          0% {
-            transform: translateX(0%);
-          }
+      <!-- Links -->
+      <div class="flex space-x-6">
+        <a href="#home" class="hover:text-green-500 font-medium">Home</a>
+        <a href="#product" class="hover:text-blue-500 font-medium">Products</a>
+        <a href="#reviews" class="hover:text-pink-500 font-medium">Reviews</a>
+        <a href="#home" class="hover:text-purple-500 font-medium">Back to NebulaMart</a>
+      </div>
 
-          20% {
-            transform: translateX(-20%);
-          }
+      <!-- Copyright -->
+      <div class="text-gray-400 text-sm">
+        &copy; <span id="footerYear"></span> NebulaMart. All rights reserved.
+      </div>
 
-          40% {
-            transform: translateX(-40%);
-          }
+    </div>
+  </footer>
 
-          60% {
-            transform: translateX(-60%);
-          }
+</body>
+<script src="script.js"></script>
 
-          80% {
-            transform: translateX(-80%);
-          }
-
-          100% {
-            transform: translateX(0%);
-          }
-        }
-
-        .animate-slide {
-          animation: slide 25s linear infinite;
-        }
-      </style>
-    </section>
-    <!-- All products -->
-    <section id="product" class="mt-10 pt-10">
-      <div id="products" class="grid grid-cols-3 gap-4 px-30"></div>
-    </section>
-  </body>
-  <script src="script.js"></script>
 </html>
