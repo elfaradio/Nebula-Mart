@@ -258,20 +258,17 @@
         </div>
       </div>
     </section>
-    <!-- Contact Section -->
+     <!-- Contact Section -->
     <section id="contact" class="bg-emerald-200 py-6">
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 max-w-2xl mx-auto bg-white shadow-md p-8 rounded-lg space-y-4">
         <h3 class="text-3xl font-bold text-center mb-8 text-slate-800">
           Contact Us
         </h3>
-
-        <form
-          action="https://sheetdb.io/api/v1/g2wcpmkbl4tfq"
-          method="POST"
-          class="max-w-2xl mx-auto bg-white shadow-md p-8 rounded-lg space-y-4"
-        >
+          
+          <!-- class="max-w-2xl mx-auto bg-white shadow-md p-8 rounded-lg space-y-4" -->
           <input
             type="text"
+            id="nam"
             name="name"
             placeholder="Your Name"
             class="w-full border border-gray-300 p-2 rounded-lg"
@@ -280,6 +277,7 @@
 
           <input
             type="tel"
+            id="phon"
             name="phone"
             placeholder="Your Phone"
             class="w-full border border-gray-300 p-2 rounded-lg"
@@ -288,6 +286,7 @@
 
           <input
             type="email"
+            id="emai"
             name="email"
             placeholder="Your Email"
             class="w-full border border-gray-300 p-2 rounded-lg"
@@ -296,21 +295,20 @@
 
           <textarea
             name="message"
+            id="messag"
             placeholder="Your Message"
             rows="3"
             class="w-full border border-gray-300 p-2 rounded-lg"
             required
           ></textarea>
 
-          <button
-            type="submit"
+          <input
+            type="submit" onclick="test()"
             class="bg-amber-400 text-black px-4 py-2 rounded-lg hover:bg-amber-500 w-full font-bold"
           >
-            Send Message
-          </button>
-        </form>
       </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-6 mt-10">
