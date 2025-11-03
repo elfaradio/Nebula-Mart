@@ -86,4 +86,4 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 
 ## 🙏 Acknowledgments
 
-Made with ❤️ by elfaradio and Nasif-Iqbal
+Made with ❤️ by [elfaradio](https://github.com/elfaradio) and [Nasif-Iqbal](https://github.com/Nasif-Iqbal)
