@@ -109,7 +109,7 @@ function updateCart() {
     div.innerHTML = `
           <img src="${product.images[0]}" class="w-10 h-10 object-contain"/>
           <span class="text-sm text-black dark:text-gray-200">${product.title} (${cnt}x)</span>
-          <span class="text-sm font-bold dark:text-gray-200">$${totalItem}</span>
+          <span class="text-sm text-black font-bold dark:text-gray-200">$${totalItem}</span>
           <button class="removeItem text-red-500 text-lg">&times;</button>
         `;
     div.querySelector(".removeItem").addEventListener("click", () => removeFromCart(product.id));
