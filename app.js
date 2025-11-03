@@ -14,6 +14,7 @@ const cartItems = document.getElementById("cartItems");
 balanceTag.textContent = balance;
 let nasif = 0;
 let ifte = 0;
+
 const fetching = () => {
   const storage = localStorage.getItem("lcproducts");
   if (storage) {
@@ -189,6 +190,7 @@ document.getElementById("final").addEventListener("click", () => {
   showAll(allproducts);
 
   alert("Thank you for shopping with us!");
+  cartToggle.style.display = "none";
 });
 
 document.getElementById("addBtn").addEventListener("click", () => {
@@ -231,3 +233,75 @@ function test() {
 }
 
 
+document.getElementById('sndBtn').addEventListener('click', test);
+
+const reviewsFetch = () => {
+  fetch('https://dummyjson.com/comments')
+    .then(res => res.json())
+    .then(data => showReview(data));
+}
+
+function showReview(data) {
+  const reviewTag = document.getElementById('reviewSlider');
+  const reviewsAll = data.comments;
+
+  reviewsAll.forEach((element) => {
+    const allow = [7, 10, 12, 14, 24];
+    if (allow.includes(element.id)) {
+      const div = document.createElement('div');
+      const rat = Math.min(5, Math.round(element.likes));
+      let rr = '';
+      for (let i = 0; i < 5; i++) {
+
+        if (i < rat) {
+          rr += '★';
+        }
+        else {
+          rr += '☆'
+        }
+      }
+      div.className = "w-[30%]  h-50 bg-white text-black rounded-lg flex flex-col p-4  items-center";
+
+      div.innerHTML = `
+  <div class="flex  gap-2 flex-col ">
+  <div class=flex items-center gap-2>
+  <img src="assets/profile.png"  class=" w-10" rounded-full">
+   <p class="font-bold text-black">${element.user.fullName}</p>
+  
+   </div>
+   
+
+    <p class="text-3xl  text-black italic">"${element.body}"</p>
+         <p class="text-yellow-400 text-xl mt-2">${rr}</p>
+    
+   
+  </div>
+`;
+      reviewTag.appendChild(div);
+    }
+
+
+  });
+}
+
+reviewsFetch();
+const themeBtn = document.getElementById("theme");
+const bodyEl = document.documentElement; // <html>
+let isDark = localStorage.getItem("darkMode") === "true";
+setTheme(isDark);
+
+themeBtn.addEventListener("click", () => {
+  isDark = !isDark;
+  setTheme(isDark);
+  localStorage.setItem("darkMode", isDark);
+});
+
+function setTheme(dark) {
+  if (dark) {
+    bodyEl.classList.add("dark");
+    themeBtn.textContent = "Light Mode";
+  } else {
+    bodyEl.classList.remove("dark");
+    themeBtn.textContent = "Dark Mode";
+  }
+}
