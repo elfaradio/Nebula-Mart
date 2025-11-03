@@ -40,15 +40,15 @@ NebulaMart is a **modern, responsive e-commerce web application** built using **
 
 ```
 nebula-mart/
-│
-├── index.html          # Main application entry point
+│── assets/
+│   ├── mainlogo.png
+│   └── profile.png
 ├── src/
-│   ├── app.js         # Core application logic
-│   ├── input.css      # Tailwind source styles
-│   └── output.css     # Compiled CSS
-├── assets/
-│   ├── mainlogo.png   # Application logo
-│   └── profile.png    # Default review avatar
+│   ├── input.css
+│   └── output.css
+├── index.html
+├── app.js
+
 └── README.md          # Project documentation
 ```
 
