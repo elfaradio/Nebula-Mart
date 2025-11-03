@@ -251,15 +251,15 @@ function showReview(comments) {
 
       div.className = "w-1/3 bg-white dark:bg-gray-700 text-black dark:text-white rounded-lg flex flex-col p-4 items-center";
       div.innerHTML = `
-< div class= "flex flex-col items-center gap-2" >
-                    <div class="flex items-center gap-2">
-                        <img src="assets/profile.png" class="w-10 rounded-full"/>
-                        <p class="font-bold">${el.user.fullName}</p>
-                    </div>
-                    <p class="text-center text-lg italic">"${el.body}"</p>
-                    <p class="text-yellow-400 text-xl mt-2">${rr}</p>
-                </ >
-  `;
+  <div class="flex flex-col items-center gap-2">
+    <div class="flex items-center gap-2">
+      <img src="assets/profile.png" class="w-10 rounded-full"/>
+      <p class="font-bold">${el.user.fullName}</p>
+    </div>
+    <p class="text-center text-lg italic">"${el.body}"</p>
+    <p class="text-yellow-400 text-xl mt-2">${rr}</p>
+  </div>
+`;
       reviewTag.appendChild(div);
     }
   });
