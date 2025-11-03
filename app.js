@@ -210,8 +210,8 @@ cartBtn.addEventListener("click", () => cartToggle.classList.toggle("hidden"));
 closeCart.addEventListener("click", () => cartToggle.classList.add("hidden"));
 
 //Nasif
-document.getElementById("sndBtn").addEventListener("click", function (event) {
-  event.preventDefault();
+document.getElementById("sndBtn").addEventListener("click", => {
+ 
   const name = document.getElementById("nam").value;
   const phone = document.getElementById("phon").value;
   const email = document.getElementById("emai").value;
