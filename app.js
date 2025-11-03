@@ -212,12 +212,15 @@ closeCart.addEventListener("click", () => cartToggle.classList.add("hidden"));
 //Nasif
 document.getElementById("sndBtn").addEventListener("click", function (event) {
   event.preventDefault();
+document.getElementById("sndBtn").addEventListener("click", () => {
+
   const name = document.getElementById("nam").value;
   const phone = document.getElementById("phon").value;
   const email = document.getElementById("emai").value;
   const message = document.getElementById("messag").value;
 
   alert(`${name}, your message is submitted successfully.`);
+
 
   const fData = JSON.parse(localStorage.getItem("formData")) || [];
   fData.push({ name, phone, email, message });
