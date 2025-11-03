@@ -1,5 +1,8 @@
 # NebulaMart Web App
 
+## 🔗 Live Demo
+👉 [View Live](https://nebula-mart-8tjrn6bwl-farhadul-islams-projects.vercel.app/)
+
 ## 🌟 Overview
 
 NebulaMart is a **modern, responsive e-commerce web application** built using **HTML, Tailwind CSS, and JavaScript**. It provides an immersive online shopping experience with a rich feature set and smooth user interactions.
