@@ -13,7 +13,7 @@ const cartItems = document.getElementById("cartItems");
 
 balanceTag.textContent = balance;
 let nasif = 0;
-let ifte=0;
+let ifte = 0;
 const fetching = () => {
   const storage = localStorage.getItem("lcproducts");
   if (storage) {
@@ -203,31 +203,31 @@ closeCart.addEventListener("click", () => (cartToggle.style.display = "none"));
 
 fetching();
 
-//contact section-------->
+//Nasif
 function test() {
-  var name = document.getElementById("nam").value;
-  var phone = document.getElementById("phon").value;
-  var email = document.getElementById("emai").value;
-  var message = document.getElementById("messag").value;
+  let name = document.getElementById("nam").value;
+  let phone = document.getElementById("phon").value;
+  let email = document.getElementById("emai").value;
+  let message = document.getElementById("messag").value;
 
   alert(`${name}, your message is submitted successfully.`);
 
-  // Create a new entry object
-  var newEntry = {
+
+  var FormData = {
     name: name,
     phone: phone,
     email: email,
     message: message
   };
 
-  // Get existing data from localStorage (if any)
-  var storedData = JSON.parse(localStorage.getItem("formData")) || [];
 
-  // Add new entry
-  storedData.push(newEntry);
+  var fData = JSON.parse(localStorage.getItem("formData")) || [];
 
-  // Save back to localStorage
-  localStorage.setItem("formData", JSON.stringify(storedData));
+
+  fData.push(FormData);
+
+
+  localStorage.setItem("formData", JSON.stringify(fData));
 }
 
 
