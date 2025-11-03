@@ -19,14 +19,12 @@
   <body
     class="bg-emerald-50 dark:bg-gray-900 text-black dark:text-white transition-colors duration-500"
   >
-    <!-- NAVBAR -->
     <nav
       class="bg-gray-800 dark:bg-gray-800 fixed w-full top-0 z-50 transition-colors duration-500"
     >
       <div
         class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
       >
-        <!-- Left -->
         <div class="flex items-center space-x-8">
           <div class="flex items-center space-x-2">
             <img
@@ -50,6 +48,11 @@
             href="#reviews"
             class="text-sm font-medium text-white hover:text-green-600"
             >Reviews</a
+          >
+          <a
+            href="#contact"
+            class="text-sm font-medium text-white hover:text-green-600"
+            >Contact</a
           >
         </div>
 
@@ -86,7 +89,6 @@
       </div>
     </nav>
 
-    <!-- CART -->
     <div
       id="cartToggle"
       class="fixed top-20 right-2 bg-blue-400 dark:bg-gray-800 w-96 p-4 rounded-lg shadow-lg z-50 transition-colors duration-500 hidden"
@@ -133,69 +135,7 @@
     </div>
 
     <div class="h-20" id="home"></div>
-    <!-- <section id="" class="bg-white">
-      <div class="w-full h-70 overflow-hidden">
-        <div class="flex w-[200%] animate-slide gap-2">
-          <img
-            src=" https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/1.webp"
-            alt=""
-            class="w-1/4 object-cover h-50 bg-pink-50 border-black border-5"
-          />
-          <img
-            src="https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-50 bg-pink-50 border-black border-5"
-          />
-          <img
-            src="https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-50 bg-pink-50 border-black border-5"
-          />
-          <img
-            src="https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-50 bg-pink-50 border-black border-5"
-          />
-          <img
-            src="https://cdn.dummyjson.com/product-images/groceries/cat-food/1.webp"
-            alt=""
-            class="w-1/4 object-contain h-50 bg-pink-50 border-black border-5"
-          />
-        </div>
-      </div>
 
-      <style>
-        @keyframes slide {
-          0% {
-            transform: translateX(0%);
-          }
-
-          20% {
-            transform: translateX(-20%);
-          }
-
-          40% {
-            transform: translateX(-40%);
-          }
-
-          60% {
-            transform: translateX(-60%);
-          }
-
-          80% {
-            transform: translateX(-80%);
-          }
-
-          100% {
-            transform: translateX(0%);
-          }
-        }
-
-        .animate-slide {
-          animation: slide 25s linear infinite;
-        }
-      </style>
-    </section> -->
     <section class="bg-white">
       <div class="w-full overflow-hidden h-100">
         <div class="flex animate-slide gap-2">
@@ -259,17 +199,16 @@
         }
       </style>
     </section>
-    <!-- PRODUCTS SECTION -->
-    <h1 class="text-center text-3xl font-bold pt-10 dark:text-white">
+
+    <h1 class="text-center text-3xl text-black font-bold pt-10 dark:text-white">
       Check Our Products
     </h1>
     <section id="product" class="mt-10 pt-10">
       <div id="products" class="grid grid-cols-3 gap-4 px-8"></div>
     </section>
 
-    <!-- REVIEWS -->
     <section id="reviews" class="bg-emerald-50 py-16 overflow-hidden">
-      <h2 class="text-3xl font-bold text-center mb-8">
+      <h2 class="text-3xl font-bold text-center mb-8 dark:text-black">
         What Our Customers Say
       </h2>
 
@@ -309,13 +248,14 @@
       </style>
     </section>
 
-    <!-- CONTACT FORM -->
     <section
       id="contact"
       class="bg-emerald-200 dark:bg-gray-800 py-6 transition-colors duration-500"
     >
       <div class="container mx-auto px-4">
-        <h3 class="text-3xl font-bold text-center mb-8 dark:text-white">
+        <h3
+          class="text-3xl font-bold text-center mb-8 text-black dark:text-white"
+        >
           Contact Us
         </h3>
         <form
@@ -360,7 +300,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer
       class="bg-gray-800 dark:bg-gray-900 text-white py-6 mt-10 transition-colors duration-500"
     >
@@ -383,7 +322,6 @@
       </div>
     </footer>
 
-    <!-- JS -->
     <script src="app.js"></script>
   </body>
 </html>
