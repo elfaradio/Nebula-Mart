@@ -202,3 +202,32 @@ cartBtn.addEventListener("click", () => (cartToggle.style.display = "block"));
 closeCart.addEventListener("click", () => (cartToggle.style.display = "none"));
 
 fetching();
+
+//contact section-------->
+function test() {
+  var name = document.getElementById("nam").value;
+  var phone = document.getElementById("phon").value;
+  var email = document.getElementById("emai").value;
+  var message = document.getElementById("messag").value;
+
+  alert(`${name}, your message is submitted successfully.`);
+
+  // Create a new entry object
+  var newEntry = {
+    name: name,
+    phone: phone,
+    email: email,
+    message: message
+  };
+
+  // Get existing data from localStorage (if any)
+  var storedData = JSON.parse(localStorage.getItem("formData")) || [];
+
+  // Add new entry
+  storedData.push(newEntry);
+
+  // Save back to localStorage
+  localStorage.setItem("formData", JSON.stringify(storedData));
+}
+
+
