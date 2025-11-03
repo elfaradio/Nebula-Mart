@@ -211,7 +211,7 @@ closeCart.addEventListener("click", () => cartToggle.classList.add("hidden"));
 
 //Nasif
 document.getElementById("sndBtn").addEventListener("click", () => {
- 
+
   const name = document.getElementById("nam").value;
   const phone = document.getElementById("phon").value;
   const email = document.getElementById("emai").value;
@@ -221,7 +221,7 @@ document.getElementById("sndBtn").addEventListener("click", () => {
     return;
   }
 
-  
+
 
   const fData = JSON.parse(localStorage.getItem("formData")) || [];
   fData.push({ name, phone, email, message });
