@@ -210,18 +210,14 @@ cartBtn.addEventListener("click", () => cartToggle.classList.toggle("hidden"));
 closeCart.addEventListener("click", () => cartToggle.classList.add("hidden"));
 
 //Nasif
-document.getElementById("sndBtn").addEventListener("click", () => {
+document.getElementById("sndBtn").addEventListener("click", function (event) {
   event.preventDefault();
   const name = document.getElementById("nam").value;
   const phone = document.getElementById("phon").value;
   const email = document.getElementById("emai").value;
   const message = document.getElementById("messag").value;
-  if (!name || !phone || !email || !message) {
-    alert("Please fill in all fields.");
-    return;
-  }
 
-
+  alert(`${name}, your message is submitted successfully.`);
 
   const fData = JSON.parse(localStorage.getItem("formData")) || [];
   fData.push({ name, phone, email, message });
