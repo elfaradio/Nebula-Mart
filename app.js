@@ -216,14 +216,19 @@ document.getElementById("sndBtn").addEventListener("click", () => {
   const phone = document.getElementById("phon").value;
   const email = document.getElementById("emai").value;
   const message = document.getElementById("messag").value;
+  if (!name || !phone || !email || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
 
-  alert(`${name}, your message is submitted successfully.`);
+  
 
   const fData = JSON.parse(localStorage.getItem("formData")) || [];
   fData.push({ name, phone, email, message });
   localStorage.setItem("formData", JSON.stringify(fData));
 
   document.querySelector("form").reset();
+  alert(`${name}, your message is submitted successfully.`);
 });
 
 const reviewsFetch = () => {
