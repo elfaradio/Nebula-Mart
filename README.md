@@ -23,3 +23,17 @@ NebulaMart is a **responsive e-commerce web application** built using **HTML, Ta
 - **API Integration** with [DummyJSON](https://dummyjson.com)
 
 ---
+
+## Project Structure
+
+nebula-mart/
+│
+├─ index.html # Main HTML page
+├─ src/
+│ ├─ app.js # JavaScript logic
+│ ├─ input.css # Tailwind input file (for CLI build)
+│ └─ output.css # Compiled Tailwind CSS
+├─ assets/
+│ ├─ mainlogo.png # Logo image
+│ └─ profile.png # Default review avatar
+└─ README.md # Project documentation
