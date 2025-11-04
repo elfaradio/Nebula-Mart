@@ -12,29 +12,11 @@ const subtotalTag = document.getElementById("price");
 const deliveryTag = document.getElementById("delivery");
 const cartItems = document.getElementById("cartItems");
 const themeBtn = document.getElementById("theme");
-const bodyEl = document.documentElement;
+const bodyelement = document.documentElement;
 
 balanceTag.textContent = balance.toFixed(2);
 
 
-let isDark = localStorage.getItem("darkMode") === "true";
-setTheme(isDark);
-
-themeBtn.addEventListener("click", () => {
-  isDark = !isDark;
-  setTheme(isDark);
-  localStorage.setItem("darkMode", isDark);
-});
-
-function setTheme(dark) {
-  if (dark) {
-    bodyEl.classList.add("dark");
-    themeBtn.textContent = "Light Mode";
-  } else {
-    bodyEl.classList.remove("dark");
-    themeBtn.textContent = "Dark Mode";
-  }
-}
 
 
 const fetching = () => {
@@ -267,3 +249,24 @@ function showReview(comments) {
 
 fetching();
 reviewsFetch();
+
+
+
+let isDark = localStorage.getItem("darkMode") === "true";
+setTheme(isDark);
+
+themeBtn.addEventListener("click", () => {
+  isDark = !isDark;
+  setTheme(isDark);
+  localStorage.setItem("darkMode", isDark);
+});
+
+function setTheme(dark) {
+  if (dark) {
+    bodyelement.classList.add("dark");
+    themeBtn.textContent = "Light Mode";
+  } else {
+    bodyelement.classList.remove("dark");
+    themeBtn.textContent = "Dark Mode";
+  }
+}
