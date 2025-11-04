@@ -1,7 +1,7 @@
 # NebulaMart Web App
 
 ## 🔗 Live Demo
-👉 [View Live](https://nebula-mart-8tjrn6bwl-farhadul-islams-projects.vercel.app/)
+👉 [View Live](https://nebula-mart.vercel.app/)
 
 ## 🌟 Overview
 
