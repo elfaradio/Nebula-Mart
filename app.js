@@ -109,6 +109,8 @@ function updateCart() {
 
 function calculateTotal() {
   return Object.values(cart).reduce((sum, { product, cnt }) => sum + product.price * cnt, 0);
+
+
 }
 
 function deliveryCharge(subtotal) {
