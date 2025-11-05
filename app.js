@@ -12,29 +12,11 @@ const subtotalTag = document.getElementById("price");
 const deliveryTag = document.getElementById("delivery");
 const cartItems = document.getElementById("cartItems");
 const themeBtn = document.getElementById("theme");
-const bodyEl = document.documentElement;
+const bodyelement = document.documentElement;
 
 balanceTag.textContent = balance.toFixed(2);
 
 
-let isDark = localStorage.getItem("darkMode") === "true";
-setTheme(isDark);
-
-themeBtn.addEventListener("click", () => {
-  isDark = !isDark;
-  setTheme(isDark);
-  localStorage.setItem("darkMode", isDark);
-});
-
-function setTheme(dark) {
-  if (dark) {
-    bodyEl.classList.add("dark");
-    themeBtn.textContent = "Light Mode";
-  } else {
-    bodyEl.classList.remove("dark");
-    themeBtn.textContent = "Dark Mode";
-  }
-}
 
 
 const fetching = () => {
@@ -210,8 +192,7 @@ cartBtn.addEventListener("click", () => cartToggle.classList.toggle("hidden"));
 closeCart.addEventListener("click", () => cartToggle.classList.add("hidden"));
 
 //Nasif
-document.getElementById("sndBtn").addEventListener("click", function (event) {
-  event.preventDefault();
+
 document.getElementById("sndBtn").addEventListener("click", () => {
 
   const name = document.getElementById("nam").value;
@@ -219,7 +200,10 @@ document.getElementById("sndBtn").addEventListener("click", () => {
   const email = document.getElementById("emai").value;
   const message = document.getElementById("messag").value;
 
-  alert(`${name}, your message is submitted successfully.`);
+  if (!name || !phone || !email || !message) {
+    alert("Please fill in all fields.");
+    return;
+  }
 
 
   const fData = JSON.parse(localStorage.getItem("formData")) || [];
@@ -249,15 +233,15 @@ function showReview(comments) {
 
       div.className = "w-1/3 bg-white dark:bg-gray-700 text-black dark:text-white rounded-lg flex flex-col p-4 items-center";
       div.innerHTML = `
-< div class= "flex flex-col items-center gap-2" >
-                    <div class="flex items-center gap-2">
-                        <img src="assets/profile.png" class="w-10 rounded-full"/>
-                        <p class="font-bold">${el.user.fullName}</p>
-                    </div>
-                    <p class="text-center text-lg italic">"${el.body}"</p>
-                    <p class="text-yellow-400 text-xl mt-2">${rr}</p>
-                </ >
-  `;
+  <div class="flex flex-col items-center gap-2">
+    <div class="flex items-center gap-2">
+      <img src="assets/profile.png" class="w-10 rounded-full"/>
+      <p class="font-bold">${el.user.fullName}</p>
+    </div>
+    <p class="text-center text-lg italic">"${el.body}"</p>
+    <p class="text-yellow-400 text-xl mt-2">${rr}</p>
+  </div>
+`;
       reviewTag.appendChild(div);
     }
   });
@@ -265,3 +249,24 @@ function showReview(comments) {
 
 fetching();
 reviewsFetch();
+
+
+
+let isDark = localStorage.getItem("darkMode") === "true";
+setTheme(isDark);
+
+themeBtn.addEventListener("click", () => {
+  isDark = !isDark;
+  setTheme(isDark);
+  localStorage.setItem("darkMode", isDark);
+});
+
+function setTheme(dark) {
+  if (dark) {
+    bodyelement.classList.add("dark");
+    themeBtn.textContent = "Light Mode";
+  } else {
+    bodyelement.classList.remove("dark");
+    themeBtn.textContent = "Dark Mode";
+  }
+}
