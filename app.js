@@ -13,7 +13,7 @@ const deliveryTag = document.getElementById("delivery");
 const cartItems = document.getElementById("cartItems");
 const themeBtn = document.getElementById("theme");
 const bodyelement = document.documentElement;
-
+const ttcart = document.getElementById("ttcart");
 balanceTag.textContent = balance.toFixed(2);
 
 
@@ -108,7 +108,15 @@ function updateCart() {
 }
 
 function calculateTotal() {
-  return Object.values(cart).reduce((sum, { product, cnt }) => sum + product.price * cnt, 0);
+  let c = 0;
+  let s = 0;
+  for (let i in cart) {
+    s += cart[i].product.price * cart[i].cnt;
+    c += cart[i].cnt;
+  }
+  ttcart.textContent = c;
+  return s;
+
 }
 
 function deliveryCharge(subtotal) {
